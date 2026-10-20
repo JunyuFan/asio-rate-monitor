@@ -10,9 +10,9 @@ A lightweight Windows utility that displays the current sample rate reported by 
 
 ## Requirements
 
-Windows 10 (1607 or later) or Windows 11, x64; .NET Framework 4.8; and an installed Dreamus USB Audio Device driver with one connected device.
+Windows 10 (1607 or later) or Windows 11, x64; .NET Framework 4.8.
 
-Verified on Windows 11 with Dreamus driver 5.50.0 and an AK USB DAC. The interface is in Simplified Chinese. Other drivers are not currently supported.
+Currently only compatible with Astell&Kern (Dreamus) drivers; other ASIO drivers are unsupported.
 
 ## Usage
 
