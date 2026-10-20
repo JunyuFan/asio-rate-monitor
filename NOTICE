@@ -1,0 +1,7 @@
+ASIO Rate Monitor
+
+The project code and documentation are licensed under the MIT License (LICENSE).
+
+The application uses the separately installed Dreamus driver, Microsoft .NET
+Framework, and Windows system fonts. These components are not included in the
+source or release packages and remain subject to their respective licenses.
