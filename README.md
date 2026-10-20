@@ -6,6 +6,8 @@ A lightweight Windows utility that displays the current sample rate reported by 
 - Event-driven updates, with selectable 1, 2, or 5 second polling and automatic fallback when notifications are unavailable.
 - Reads driver status without creating audio streams or changing audio settings.
 
+![效果图](figs/preview.png)
+
 ## Requirements
 
 Windows 10 (1607 or later) or Windows 11, x64; .NET Framework 4.8; and an installed Dreamus USB Audio Device driver with one connected device.
