@@ -18,7 +18,7 @@ $appConfig = @('<?xml version="1.0" encoding="utf-8"?>', '<configuration>',
     '  <startup><supportedRuntime version="v4.0" sku=".NETFramework,Version=v4.8"/></startup>', '</configuration>') -join [Environment]::NewLine
 
 $appExe = Join-Path $releasePath 'ASIORateMonitor.exe'
-& $compilerPath @commonArgs /target:winexe ('/out:' + $appExe) @sources
+& $compilerPath @commonArgs /target:winexe ('/win32icon:' + (Join-Path $projectRoot 'app.ico')) ('/out:' + $appExe) @sources
 if ($LASTEXITCODE -ne 0) { throw 'App build failed. Exit the running app before rebuilding.' }
 Set-Content -LiteralPath ($appExe + '.config') -Value $appConfig -Encoding UTF8
 
@@ -38,7 +38,7 @@ Copy-Item -LiteralPath (Join-Path $projectRoot 'LICENSE') -Destination $releaseP
 Copy-Item -LiteralPath (Join-Path $projectRoot 'NOTICE') -Destination $releasePath
 $packageFiles = @($appExe, ($appExe + '.config'), (Join-Path $releasePath 'README.md'), (Join-Path $releasePath 'LICENSE'), (Join-Path $releasePath 'NOTICE'))
 Compress-Archive -LiteralPath $packageFiles -DestinationPath (Join-Path $releasePath "asio-rate-monitor-v$version-win-x64.zip") -Force
-$sourceFiles = @('src','tests','README.md','LICENSE','NOTICE','build.ps1','app.manifest','.gitignore') |
+$sourceFiles = @('src','tests','README.md','LICENSE','NOTICE','build.ps1','app.manifest','app.ico','.gitignore') |
     ForEach-Object { Join-Path $projectRoot $_ }
 Compress-Archive -LiteralPath $sourceFiles -DestinationPath (Join-Path $releasePath "asio-rate-monitor-v$version-source.zip") -Force
 Write-Output ('Built: ' + $appExe)
