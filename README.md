@@ -8,6 +8,12 @@ A lightweight Windows utility that displays the current sample rate reported by 
 
 ![效果图](figs/preview.png)
 
+## Updates
+
+v1.1.7
+Added a waveform icon for the Windows executable and shortcuts. The system tray icon continues to display the current sample rate.
+
+
 ## Requirements
 
 Windows 10 (1607 or later) or Windows 11, x64; .NET Framework 4.8.
